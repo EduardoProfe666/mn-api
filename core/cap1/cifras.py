@@ -1,20 +1,36 @@
 """
 Capítulo 1. Cifras significativas, decimales y exactas.
-Módulo que provee de los principales métodos para el cálculo de las cifras decimales, significativas y exactas
+Módulo que provee de los principales métodos para el cálculo de:
+- Cifras decimales
+- Cifras significativas
+- Cifras exactas
 """
-
 import pandas as pd
 
 
-def cifras_sig(x: float):
+def cifras_sig(x: float | str):
     """
-    Permite contar la cantidad de cifras significativas de un valor x
+    Descripción:
+    ---------------
+        Permite contar la cantidad de cifras significativas de un valor x
 
     Parámetros:
+    ---------------
         x: valor x a procesar
 
     Salida:
+    ---------------
         int: cantidad de cifras significativas
+
+    Ejemplo:
+    ---------------
+        >> x = '0.002030'
+
+        >> print(f'Tiene {cifras_sig(x)} cifras significativas')
+
+        Tiene 4 cifras significativas
+
+    :param x: valor x a procesar
     """
 
     a = str(x)
@@ -37,15 +53,29 @@ def cifras_sig(x: float):
     return cont
 
 
-def cifras_dec(x: float):
+def cifras_dec(x: float | str):
     """
-    Permite contar la cantidad de cifras decimales de un valor x
+    Descripción:
+    ---------------
+        Permite contar la cantidad de cifras decimales de un valor x
 
     Parámetros:
+    ---------------
         x: valor x a procesar
 
     Salida:
+    ---------------
         int: cantidad de cifras decimales
+
+    Ejemplo:
+    ---------------
+        >> x = '12.3344'
+
+        >> print(f'Tiene {cifras_dec(x)} cifras decimales')
+
+        Tiene 4 cifras decimales
+
+    :param x: valor x a procesar
     """
 
     a = str(x)
@@ -65,7 +95,7 @@ class ResultadoCifrasExactas:
 
     Contenido:
         lista_filas_proc: contiene la lista con los estados en cada iteración del algoritmo de las cifras exactas
-        valor_cifras_exactas: valor que contiene las cifras exactas del número original
+        valor_cifras_exactas: valor que contiene las cifras exactas del número original.
     """
 
     def __init__(self, lista, valor):
@@ -91,16 +121,36 @@ class FilaProcCifrasExactas:
         self.dig_exacto = dig_exacto
 
 
-def cifras_exactas(xa: float, error_abs: float):
+def cifras_exactas(xa: float | str, error_abs: float):
     """
-    Permite procesar la cantidad de cifras exactas de un valor dados su valor aproximado y el error absoluto
+    Descripción:
+    --------------
+        Permite procesar la cantidad de cifras exactas de un valor dados su valor aproximado y el error absoluto
 
     Parámetros:
+    -------------
         xa: valor aproximado xa (x*)
+
         error_abs: error absoluto E(x)
 
     Salida:
+    -------------
         ResultadoCifrasExactas: resultado del algoritmo de cifras exactas
+
+    Ejemplo:
+    ------------
+        >> xa = 3.1415
+
+        >> error_abs = 0.0002
+
+        >> r = cifras_exactas(xa, error_abs)
+
+        >> print('El valor exacto es: '+str(r.valor_cifras_exactas))
+
+        El valor exacto es: 3.141
+
+    :param xa: valor aproximado xa (x*)
+    :param error_abs: error absoluto E(x)
     """
 
     cont = 0
@@ -141,13 +191,33 @@ def cifras_exactas(xa: float, error_abs: float):
 
 def convertir_resultados_cifras_exactas(lista_resultados_cifras_exactas):
     """
-    Permite procesar el resultado del algoritmo de las cifras exactas en una tabla (DataFrame de pandas)
+    Descripción:
+    -----------------
+        Permite procesar el resultado del algoritmo de las cifras exactas en una tabla (DataFrame de pandas)
 
     Parámetros:
+    -----------------
         lista_resultados_cifras_exactas: lista de iteraciones que se encuentra en la clase ResultadoCifrasExactas
 
     Salida:
+    -------------------
         DataFrame: tabla con el resultado del algoritmo de las cifras exactas de forma ordenada
+
+    Ejemplo:
+    -------------------
+        >> xa = 3.1415
+
+        >> error_abs = 0.0002
+
+        >> r = cifras_exactas(xa, error_abs)
+
+        >> print(convertir_resultados_cifras_exactas(r.lista_filas_proc))
+
+        >> dataframe = convertir_resultados_cifras_exactas(r.lista_filas_proc)
+
+        >> print(tabulate(dataframe, headers="keys", tablefmt="fancy_grid"))
+
+    :param lista_resultados_cifras_exactas: lista de iteraciones que se encuentra en la clase ResultadoCifrasExactas
     """
 
     lista = []
