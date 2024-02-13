@@ -21,7 +21,7 @@ setup(
     long_description=long_description,
     packages=find_packages(),
     python_requires=">=3.9, <4",
-    install_requires=['numpy', 'matplotlib', 'scipy', 'simpy', 'jupyterlab', 'pandas', 'tabulate'],
+    install_requires=['numpy', 'scipy', 'simpy', 'pandas', 'tabulate'],
     keywords=['numerical methods', 'metodos numericos', 'cujae', 'python', 'jupyter-lab'],
     classifiers=[
         "Development Status :: 1 - Planning",
