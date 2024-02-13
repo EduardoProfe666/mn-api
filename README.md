@@ -23,32 +23,32 @@ en Matemática Numérica.
 La siguiente lista proporciona la estructura y principales
 funcionalidades de la api:
 
-- [ x ] **Capítulo 1**
-    - Cifras
+- [x] _**Capítulo 1**_
+    - [x] **Cifras**
         - Cifras decimales
         - Cifras significativs
         - Cifras exactas
-    - Medidas del Error
+    - [x] **Medidas del Error**
         - Error
         - Error absoluto
         - Error relativo
         - Mínimo error absoluto máximo
-- [ x ] **Capítulo 2**
-    - Separación de Raíces
+- [x] _**Capítulo 2**_
+    - [x] **Separación de Raíces**
         - Bolzano-Cauchy
         - Descartes
         - Lagrange
         - Método Gráfico
-    - Resolución de ecuaciones algebraicas
+    - [x] **Resolución de ecuaciones algebraicas**
         - Bisección
         - Newton-Raphson
         - Regula-Falsi
         - Secantes
-- [ ] **Capítulo 3**
-- [ ] **Capítulo 4**
-- [ ] **Capítulo 5**
-- [ ] **Capítulo 6**
-- [ ] **Capítulo 7** 
+- [ ] _**Capítulo 3**_
+- [ ] _**Capítulo 4**_
+- [ ] _**Capítulo 5**_
+- [ ] _**Capítulo 6**_
+- [ ] _**Capítulo 7**_ 
 
 ## 📄 Importación y documentación
 > [!IMPORTANT]
