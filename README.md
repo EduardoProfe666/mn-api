@@ -6,7 +6,7 @@
 ![SciPy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
-![example workflow](https://github.com/EduardoProfe666/mn-api/actions/workflows/pipy_release.yml/badge.svg)
+![example workflow](https://github.com/EduardoProfe666/mn-api/actions/workflows/pypy.yml/badge.svg)
 
 > [!WARNING]
 > El paquete aun se encuentra en desarrollo por lo que pueden existir errores
