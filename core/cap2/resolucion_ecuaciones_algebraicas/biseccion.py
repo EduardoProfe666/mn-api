@@ -5,9 +5,10 @@ Módulo que provee de los métodos para el algoritmo de bisección
 
 import pandas as pd
 
+
 class ResultadoBiseccion:
     """
-    Clase que permite modelar el estado del algoritmo de Bisección en cada iteración
+    Clase auxiliar que permite modelar el estado del algoritmo de Bisección en cada iteración
 
     Contenido:
         a: extremo inferior del intervalo [a,b]
@@ -31,22 +32,59 @@ class ResultadoBiseccion:
 
 def biseccion(f, a: float, b: float, tol: float):
     """
-    Implementación del algoritmo de bisección para aproximar raíces en un intervalo dado
+    Descripción:
+    -----------------
+        Implementación del algoritmo de bisección para aproximar raíces en un intervalo dado
 
-    Hipótesis del algoritmo:
+    Descripción e hipótesis del algoritmo:
+    ---------------------------------------
+        Método iterativo de división de intervalos. El método consiste en aproximar la raíz de la
+        ecuación como el punto intermedio del intervalo [a,b].
+
+        Las hipótesis son:
+
         - En [a,b] la ecuación posee raíz única
+
         - f(x) es continua en [a,b]
+
         - f(a)*f(b) < 0
 
     Parámetros:
+    ---------------------------------------
         f: función f(x) a evaluar. Es una función lambda
+
         a: extremo inferior del intervalo [a,b]
+
         b: extremo superior del intervalo [a,b]
+
         tol: cota para el error absoluto
 
     Salida:
+    ---------------------
         list[list | float]: El primer elemento ([0]) es el listado de ResultadoBiseccion, el segundo elemento ([1]) es la raíz hallada
 
+    Ejemplo:
+    -------------
+        >> import math
+
+        >> f = lambda x : x**2 - math.e**x
+
+        >> a = -1
+
+        >> b = 0
+
+        >> tol = 0.0005
+
+        >> r = biseccion(f, a, b, tol)
+
+        >> print('Raíz hallada con método de Bisección: {:.7f}'.format(r[1]))
+
+        Raíz hallada con método de Bisección: -0.7036133
+
+    :param f: función f(x) a evaluar. Es una función lambda
+    :param a: extremo inferior del intervalo [a,b]
+    :param b: extremo superior del intervalo [a,b]
+    :param tol: cota para el error absoluto
     """
 
     if a > b:
@@ -82,13 +120,37 @@ def biseccion(f, a: float, b: float, tol: float):
 
 def convertir_resultados_biseccion(lista_resultados_biseccion):
     """
-    Permite procesar el resultado del algoritmo de bisección en una tabla (DataFrame de pandas)
+    Descripcion:
+    -----------------
+        Permite procesar el resultado del algoritmo de bisección en una tabla (DataFrame de pandas)
 
     Parámetros:
+    -----------------
         lista_resultados_biseccion: lista de iteraciones que modela la clase ResultadoBiseccion
 
     Salida:
+    -----------------
         DataFrame: tabla con el resultado del algoritmo de bisección de forma ordenada
+
+    Ejemplo:
+    -----------------
+        >> import math
+
+        >> f = lambda x : x**2 - math.e**x
+
+        >> a = -1
+
+        >> b = 0
+
+        >> tol = 0.0005
+
+        >> r = biseccion(f, a, b, tol)
+
+        >> dataframe = convertir_resultados_biseccion(r[0])
+
+        >> print(tabulate(dataframe, headers="keys", tablefmt="fancy_grid"))
+
+    :param lista_resultados_biseccion: lista de iteraciones que modela la clase ResultadoBiseccion
     """
 
     lista = []

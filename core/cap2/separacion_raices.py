@@ -69,7 +69,7 @@ def descartes(f):
     return ([i for i in range(result_pos, 0, -2)][0]), ([i for i in range(result_neg, 0, -2)][0])
 
 
-def cantidad_raices_descartes(m):
+def cantidad_raices_descartes(m: int):
     """
     Descripción:
     ----------------
@@ -109,7 +109,7 @@ def cantidad_raices_descartes(m):
     return cant_raices
 
 
-def bolzano_cauchy(f, a, b):
+def bolzano_cauchy(f, a: float, b: float):
     """
     Descripción:
     --------------
@@ -188,7 +188,7 @@ def lagrange(f):
     return result_pos, result_neg
 
 
-def metodo_grafico(symbol, a, b, f1, f2=None):
+def metodo_grafico(symbol, a: float, b: float, f1, f2=None):
     """
     Descripción:
     ----------------

@@ -8,7 +8,7 @@ import pandas as pd
 
 class ResultadoRegulaFalsi:
     """
-    Clase que permite modelar el estado del algoritmo de Regula-Falsi en cada iteración
+    Clase auxiliar que permite modelar el estado del algoritmo de Regula-Falsi en cada iteración
 
     Contenido:
         a: extremo inferior del intervalo [a,b]
@@ -34,21 +34,56 @@ class ResultadoRegulaFalsi:
 
 def regula_falsi(f, a: float, b: float, tol: float):
     """
+    Descripción:
+    -----------------
     Implementación del algoritmo de Regula-Falsi para aproximar raíces
 
-    Hipótesis del algoritmo:
+    Descripción e hipótesis del algoritmo:
+    --------------------------------------
+        Método iterativo de división de intervalos. El método consiste en aproximar la raíz de la
+        ecuación como el punto de intersección del segmento AB con el eje x
+
+        Las hipótesis son:
+
         - En [a,b] la ecuación posee raíz única
+
         - f(x) es continua en [a,b]
+
         - f(a)*f(b) < 0
 
     Parámetros:
+    ----------------
         f: función f(x) a evaluar. Es una función lambda
         a: extremo inferior del intervalo [a,b]
         b: extremo superior del intervalo [a,b]
         tol: cota para el error absoluto
 
     Salida:
+    --------------
         list[list | float]: El primer elemento ([0]) es el listado de ResultadoRegulaFalsi, el segundo elemento ([1]) es la raíz hallada
+
+    Ejemplo:
+    --------------
+        >> import math
+
+        >> f = lambda x : x**2 - math.e**x
+
+        >> a = -1
+
+        >> b = 0
+
+        >> tol = 0.0005
+
+        >> r = regula_falsi(f, a, b, tol)
+
+        >> print('Raíz hallada con método de Regula Falsi: {:.7f}'.format(r[1]))
+
+        Raíz hallada con método de Regula Falsi: -0.7034548
+
+    :param f: función f(x) a evaluar. Es una función lambda
+    :param a: extremo inferior del intervalo [a,b]
+    :param b: extremo superior del intervalo [a,b]
+    :param tol: cota para el error absoluto
     """
     if a > b:
         raise ValueError("Intervalo mal definido")
@@ -88,13 +123,35 @@ def regula_falsi(f, a: float, b: float, tol: float):
 
 def convertir_resultados_rf(lista_resultados_regula_falsi):
     """
+    Descripción:
+    -------------
     Permite procesar el resultado del algoritmo de Regula-Falsi en una tabla (DataFrame de pandas)
 
     Parámetros:
+    -------------
         lista_resultados_regula_falsi: lista de iteraciones que modela la clase ResultadoRegulaFalsi
 
     Salida:
+    -------------
         DataFrame: tabla con el resultado del algoritmo de Regula-Falsi de forma ordenada
+
+    Ejemplo:
+    ------------
+        >> import math
+
+        >> f = lambda x : x**2 - math.e**x
+
+        >> a = -1
+
+        >> b = 0
+
+        >> tol = 0.0005
+
+        >> r = regula_falsi(f, a, b, tol)
+
+
+
+    :param lista_resultados_regula_falsi: lista de iteraciones que modela la clase ResultadoRegulaFalsi
     """
     lista = []
     for r in lista_resultados_regula_falsi:

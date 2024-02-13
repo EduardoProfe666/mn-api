@@ -10,7 +10,7 @@ from sympy.abc import x
 
 class ResultadoNewtonRaphson:
     """
-    Clase que permite modelar el estado del algoritmo de Newton-Raphson en cada iteración
+    Clase auxiliar que permite modelar el estado del algoritmo de Newton-Raphson en cada iteración
 
     Contenido:
         x: valor de x
@@ -30,23 +30,58 @@ class ResultadoNewtonRaphson:
 
 def newton_raphson(f, x_0: float, tol: float):
     """
+    Descripción:
+    ---------------
         Implementación del algoritmo de Newton-Raphson para aproximar raíces
 
-        Hipótesis del algoritmo:
-            - En [a,b] la ecuación posee raíz única
-            - f(x) es continua en [a,b]
-            - f(a)*f(b) < 0
-            - f'(x) y f''(x) son continuas y no nulas en [a,b]
-            - x0 que pertenece al intervalo [a,b], cumple que f(x0)*f''(x0) > 0
+    Descripción e hipótesis del algoritmo:
+    ----------------------------------------
+        Método iterativo de puntos. El método consiste en aproximar la raíz de la ecuación como el
+        punto de intersección con el eje x, de la recta tangente a la función x0.
 
-        Parámetros:
-            f: función f(x) a evaluar. Es una función simbólica de sympy usando la x simbólica
-            x0: define el punto de partida x0 del método
-            tol: cota para el error absoluto
+        Las hipótesis son:
 
-        Salida:
-            list[list | float]: El primer elemento ([0]) es el listado de ResultadoNewtonRaphson, el segundo elemento ([1]) es la raíz hallada
+        - En [a,b] la ecuación posee raíz única
 
+        - f(x) es continua en [a,b]
+
+        - f(a)*f(b) < 0
+
+        - f'(x) y f''(x) son continuas y no nulas en [a,b]
+
+        - x0 que pertenece al intervalo [a,b], cumple que f(x0)*f''(x0) > 0
+
+    Parámetros:
+    ----------------
+        f: función f(x) a evaluar. Es una función simbólica de sympy usando la x simbólica
+
+        x_0: define el punto de partida x0 del método
+
+        tol: cota para el error absoluto
+
+    Salida:
+    ------------
+        list[list | float]: El primer elemento ([0]) es el listado de ResultadoNewtonRaphson, el segundo elemento ([1]) es la raíz hallada
+
+    Ejemplo:
+    -------------
+        >> from sympy.abc import x
+
+        >> f = x*exp(x)-2
+
+        >> x0 = 1
+
+        >> tol = 0.0005
+
+        >> r = newton_raphson(f, x0, tol)
+
+        >> print('Raíz hallada con método de Newton-Raphson: {:.7f}'.format(r[1]))
+
+        Raíz hallada con método de Newton-Raphson: 0.8526055
+
+    :param f: función f(x) a evaluar. Es una función simbólica de sympy usando la x simbólica
+    :param x_0: define el punto de partida x0 del método
+    :param tol: cota para el error absoluto
     """
 
     x_anterior = x_0
@@ -71,13 +106,35 @@ def newton_raphson(f, x_0: float, tol: float):
 
 def convertir_resultados_nr(lista_resultados_nr):
     """
-    Permite procesar el resultado del algoritmo de Newton-Raphson en una tabla (DataFrame de pandas)
+    Descripción:
+    ----------------
+        Permite procesar el resultado del algoritmo de Newton-Raphson en una tabla (DataFrame de pandas)
 
     Parámetros:
+    ----------------
         lista_resultados_nr: lista de iteraciones que modela la clase ResultadoNewtonRaphson
 
     Salida:
+    ----------------
         DataFrame: tabla con el resultado del algoritmo de Newton-Raphson de forma ordenada
+        
+    Ejemplo:
+    -----------------
+        >> from sympy.abc import x
+
+        >> f = x*exp(x)-2
+
+        >> x0 = 1
+
+        >> tol = 0.0005
+
+        >> r = newton_raphson(f, x0, tol)
+        
+        >> dataframe = convertir_resultados_nr(r[0])
+
+        >> print(tabulate(dataframe, headers="keys", tablefmt="fancy_grid"))
+        
+    :param lista_resultados_nr: lista de iteraciones que modela la clase ResultadoNewtonRaphson
     """
 
     lista = []
