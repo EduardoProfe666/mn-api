@@ -44,11 +44,11 @@ funcionalidades de la api:
       - Newton-Raphson
       - Regula-Falsi
       - Secantes
-- [ ] _**Capítulo 3: Sistemas de Ecuaciones Lineales y Matrices**_
-  - [ ] **Métodos** 
+- [x] _**Capítulo 3: Sistemas de Ecuaciones Lineales y Matrices**_
+  - [x] **Métodos** 
     - Método de Jacobi
     - Método de Gauss-Seidel
-  - [ ] **Utilidades**
+  - [x] **Utilidades**
     - Conversión de matrices AX=B -> X=MX+C
     - Matriz con diagonal predominante
     - Factor de convergencia
