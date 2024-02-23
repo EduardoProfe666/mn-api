@@ -81,10 +81,10 @@ def biseccion(f, a: float, b: float, tol: float):
 
         Raíz hallada con método de Bisección: -0.7036133
 
-    :param f: función f(x) a evaluar. Es una función lambda
-    :param a: extremo inferior del intervalo [a,b]
-    :param b: extremo superior del intervalo [a,b]
-    :param tol: cota para el error absoluto
+    :param f: Función f(x) a evaluar. Es una función lambda
+    :param a: Extremo inferior del intervalo [a,b]
+    :param b: Extremo superior del intervalo [a,b]
+    :param tol: Cota para el error absoluto
     """
 
     if a > b:
@@ -134,6 +134,8 @@ def convertir_resultados_biseccion(lista_resultados_biseccion):
 
     Ejemplo:
     -----------------
+        >> from tabulate import tabulate
+
         >> import math
 
         >> f = lambda x : x**2 - math.e**x
@@ -150,7 +152,7 @@ def convertir_resultados_biseccion(lista_resultados_biseccion):
 
         >> print(tabulate(dataframe, headers="keys", tablefmt="fancy_grid"))
 
-    :param lista_resultados_biseccion: lista de iteraciones que modela la clase ResultadoBiseccion
+    :param lista_resultados_biseccion: Lista de iteraciones que modela la clase ResultadoBiseccion
     """
 
     lista = []

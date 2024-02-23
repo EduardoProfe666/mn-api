@@ -34,8 +34,8 @@ def error(x: float, xa: float):
 
         El error es -1.700000000000001
 
-    :param x: valor exacto
-    :param xa: valor aproximado
+    :param x: Valor exacto
+    :param xa: Valor aproximado
     """
 
     return x - xa
@@ -63,7 +63,7 @@ def error_abs(error: float) -> float:
 
         El error absoluto es 0.9
 
-    :param error: error del valor aproximado xa
+    :param error: Error del valor aproximado xa
     """
 
     return abs(error)
@@ -95,8 +95,8 @@ def error_rel(error_abs: float, x: float):
 
         El error relativo es 0.0737704918032787
 
-    :param error_abs: error absoluto
-    :param x: valor exacto
+    :param error_abs: Error absoluto
+    :param x: Valor exacto
     """
 
     return error_abs / abs(x)
@@ -128,8 +128,8 @@ def min_error_abs_max(a: float, b: float):
 
         El mínimo error absoluto máximo en el intervalo [6.23, 9.67], es 7.95
 
-    :param a: punto inicial del intervalo [a,b]
-    :param b: punto final del intervalo [a,b]
+    :param a: Punto inicial del intervalo [a,b]
+    :param b: Punto final del intervalo [a,b]
     """
 
     return (a + b) / 2

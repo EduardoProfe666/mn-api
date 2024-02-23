@@ -80,10 +80,10 @@ def regula_falsi(f, a: float, b: float, tol: float):
 
         Raíz hallada con método de Regula Falsi: -0.7034548
 
-    :param f: función f(x) a evaluar. Es una función lambda
-    :param a: extremo inferior del intervalo [a,b]
-    :param b: extremo superior del intervalo [a,b]
-    :param tol: cota para el error absoluto
+    :param f: Función f(x) a evaluar. Es una función lambda
+    :param a: Extremo inferior del intervalo [a,b]
+    :param b: Extremo superior del intervalo [a,b]
+    :param tol: Cota para el error absoluto
     """
     if a > b:
         raise ValueError("Intervalo mal definido")
@@ -137,6 +137,8 @@ def convertir_resultados_rf(lista_resultados_regula_falsi):
 
     Ejemplo:
     ------------
+        >> from tabulate import tabulate
+
         >> import math
 
         >> f = lambda x : x**2 - math.e**x
@@ -149,9 +151,11 @@ def convertir_resultados_rf(lista_resultados_regula_falsi):
 
         >> r = regula_falsi(f, a, b, tol)
 
+        >> dataframe = convertir_resultados_nr(r[0])
 
+        >> print(tabulate(dataframe, headers="keys", tablefmt="fancy_grid"))
 
-    :param lista_resultados_regula_falsi: lista de iteraciones que modela la clase ResultadoRegulaFalsi
+    :param lista_resultados_regula_falsi: Lista de iteraciones que modela la clase ResultadoRegulaFalsi
     """
     lista = []
     for r in lista_resultados_regula_falsi:

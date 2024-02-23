@@ -79,9 +79,9 @@ def newton_raphson(f, x_0: float, tol: float):
 
         Raíz hallada con método de Newton-Raphson: 0.8526055
 
-    :param f: función f(x) a evaluar. Es una función simbólica de sympy usando la x simbólica
-    :param x_0: define el punto de partida x0 del método
-    :param tol: cota para el error absoluto
+    :param f: Función f(x) a evaluar. Es una función simbólica de sympy usando la x simbólica
+    :param x_0: Define el punto de partida x0 del método
+    :param tol: Cota para el error absoluto
     """
 
     x_anterior = x_0
@@ -120,6 +120,8 @@ def convertir_resultados_nr(lista_resultados_nr):
         
     Ejemplo:
     -----------------
+        >> from tabulate import tabulate
+
         >> from sympy.abc import x
 
         >> f = x*exp(x)-2
@@ -134,7 +136,7 @@ def convertir_resultados_nr(lista_resultados_nr):
 
         >> print(tabulate(dataframe, headers="keys", tablefmt="fancy_grid"))
         
-    :param lista_resultados_nr: lista de iteraciones que modela la clase ResultadoNewtonRaphson
+    :param lista_resultados_nr: Lista de iteraciones que modela la clase ResultadoNewtonRaphson
     """
 
     lista = []

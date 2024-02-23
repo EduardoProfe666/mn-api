@@ -9,7 +9,7 @@
 ![example workflow](https://github.com/EduardoProfe666/mn-api/actions/workflows/pypy.yml/badge.svg)
 
 > [!WARNING]
-> El paquete aun se encuentra en desarrollo por lo que pueden existir errores
+> El paquete aún se encuentra en desarrollo por lo que pueden existir errores
 
 El paquete es una migración de todas las funcionalidades
 desarrolladas en el proyecto
@@ -23,38 +23,47 @@ en Matemática Numérica.
 La siguiente lista proporciona la estructura y principales
 funcionalidades de la api:
 
-- [x] _**Capítulo 1**_
-    - [x] **Cifras**
-        - Cifras decimales
-        - Cifras significativs
-        - Cifras exactas
-    - [x] **Medidas del Error**
-        - Error
-        - Error absoluto
-        - Error relativo
-        - Mínimo error absoluto máximo
-- [x] _**Capítulo 2**_
-    - [x] **Separación de Raíces**
-        - Bolzano-Cauchy
-        - Descartes
-        - Lagrange
-        - Método Gráfico
-    - [x] **Resolución de ecuaciones algebraicas**
-        - Bisección
-        - Newton-Raphson
-        - Regula-Falsi
-        - Secantes
-- [ ] _**Capítulo 3**_
-- [ ] _**Capítulo 4**_
-- [ ] _**Capítulo 5**_
-- [ ] _**Capítulo 6**_
-- [ ] _**Capítulo 7**_ 
+- [x] _**Capítulo 1: Teoría de Errores**_
+  - [x] **Cifras**
+      - Cifras decimales
+      - Cifras significativs
+      - Cifras exactas
+  - [x] **Medidas del Error**
+      - Error
+      - Error absoluto
+      - Error relativo
+      - Mínimo error absoluto máximo
+- [x] _**Capítulo 2: Raíces de Ecuaciones Algebraicas**_
+  - [x] **Separación de Raíces**
+      - Bolzano-Cauchy
+      - Descartes
+      - Lagrange
+      - Método Gráfico
+  - [x] **Resolución de ecuaciones algebraicas**
+      - Bisección
+      - Newton-Raphson
+      - Regula-Falsi
+      - Secantes
+- [ ] _**Capítulo 3: Sistemas de Ecuaciones Lineales y Matrices**_
+  - [ ] **Métodos** 
+    - Método de Jacobi
+    - Método de Gauss-Seidel
+  - [ ] **Utilidades**
+    - Conversión de matrices AX=B -> X=MX+C
+    - Matriz con diagonal predominante
+    - Factor de convergencia
+- [ ] _**Capítulo 4: Aproximación de Funciones**_
+- [ ] _**Capítulo 5: Integración Numérica**_
+- [ ] _**Capítulo 6: Optimización Numérica**_
+- [ ] _**Capítulo 7: Ecuaciones Diferenciales Ordinarias**_
 
 ## 📄 Importación y documentación
+
 > [!IMPORTANT]
 > La documentación se encuentra en desarrollo. Pronto estará disponible
 
 Para poder importar el paquete ejecute en cualquier consola:
+
 ```shell
 pip install mn-api
 ```

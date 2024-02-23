@@ -16,7 +16,7 @@ setup(
     author="EduardoProfe66",
     author_email="eduardoglez64377@gmail.com",
     description="Big sort of numerical methods. Code and docs are in spanish ;)",
-    url = "https://github.com/EduardoProfe666/mn-api",
+    url="https://github.com/EduardoProfe666/mn-api",
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),

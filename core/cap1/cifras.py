@@ -30,7 +30,7 @@ def cifras_sig(x: float | str):
 
         Tiene 4 cifras significativas
 
-    :param x: valor x a procesar
+    :param x: Valor x a procesar
     """
 
     a = str(x)
@@ -75,7 +75,7 @@ def cifras_dec(x: float | str):
 
         Tiene 4 cifras decimales
 
-    :param x: valor x a procesar
+    :param x: Valor x a procesar
     """
 
     a = str(x)
@@ -149,8 +149,8 @@ def cifras_exactas(xa: float | str, error_abs: float):
 
         El valor exacto es: 3.141
 
-    :param xa: valor aproximado xa (x*)
-    :param error_abs: error absoluto E(x)
+    :param xa: Valor aproximado xa (x*)
+    :param error_abs: Error absoluto E(x)
     """
 
     cont = 0
@@ -205,6 +205,8 @@ def convertir_resultados_cifras_exactas(lista_resultados_cifras_exactas):
 
     Ejemplo:
     -------------------
+        >> from tabulate import tabulate
+
         >> xa = 3.1415
 
         >> error_abs = 0.0002
@@ -217,7 +219,7 @@ def convertir_resultados_cifras_exactas(lista_resultados_cifras_exactas):
 
         >> print(tabulate(dataframe, headers="keys", tablefmt="fancy_grid"))
 
-    :param lista_resultados_cifras_exactas: lista de iteraciones que se encuentra en la clase ResultadoCifrasExactas
+    :param lista_resultados_cifras_exactas: Lista de iteraciones que se encuentra en la clase ResultadoCifrasExactas
     """
 
     lista = []

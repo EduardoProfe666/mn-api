@@ -26,24 +26,67 @@ class ResultadoSecantes:
 
 def secantes(f, x0, x1, tol):
     """
-    Implementación del algoritmo de Secantes para aproximar raíces
+    Descripción:
+    ---------------
+        Implementación del algoritmo de Secantes para aproximar raíces
 
-    Hipótesis del algoritmo:
+    Descripción e hipótesis del algoritmo:
+    ----------------------------------------
+        Método iterativo de puntos. El método es una modificación de Newton-Raphson
+        para eliminar la necesidad de utilizar la función derivada, sustituyendo la
+        pendiente de una tangente por la pendiente de una secante. Las aproximaciones
+        no hay que tomarlas obligatoriamente a un mismo lado de la raíz, ni en un orden
+        específico.
+
+        Las hipótesis son:
+
         - En [a,b] la ecuación posee raíz única
+
         - f(x) es continua en [a,b]
+
         - f(a)*f(b) < 0
+
         - f'(x) y f''(x) son continuas y no nulas en [a,b]
 
+
     Parámetros:
+    ----------------
         f: función f(x) a evaluar. Es una función lambda
+
         x0: define uno de los extremos x0 del intervalo
+
         x1: define uno de los extremos x1 del intervalo
+
         tol: cota para el error absoluto
 
     Salida:
-        list[list | float]: El primer elemento ([0]) es el listado de ResultadoSecantes, el segundo elemento ([1]) es la raíz hallada
+    ------------
+        list[list | float]: El primer elemento ([0]) es el listado de ResultadoSecantes, el segundo elemento ([1])
+        es la raíz hallada
 
-        """
+    Ejemplo:
+    -------------
+        >> import math
+
+        >> f = lambda x : x*math.e**x-2
+
+        >> x0 = 1
+
+        >> x1 = 0
+
+        >> tol = 0.0005
+
+        >> r = secantes(f, x0, x1, tol)
+
+        >> print('Raíz hallada con método de Secantes: {:.7f}'.format(r[1]))
+
+        Raíz hallada con método de Secantes: 0.8526055
+
+    :param f: Función f(x) a evaluar. Es una función lambda
+    :param x0: Define uno de los extremos x0 del intervalo
+    :param x1: Define uno de los extremos x1 del intervalo
+    :param tol: Cota para el error absoluto
+    """
     if f(x0) * f(x1) >= 0.0:
         raise ValueError("La función debe cambiar de signo en el intervalo")
     if tol <= 0:
@@ -74,13 +117,39 @@ def secantes(f, x0, x1, tol):
 
 def convertir_resultados_secantes(lista_resultados_secantes):
     """
-    Permite procesar el resultado del algoritmo de Secantes en una tabla (DataFrame de pandas)
+    Descripción:
+    ----------------
+        Permite procesar el resultado del algoritmo de Secantes en una tabla (DataFrame de pandas)
 
     Parámetros:
+    ----------------
         lista_resultados_secantes: lista de iteraciones que modela la clase ResultadoSecantes
 
     Salida:
+    ----------------
         DataFrame: tabla con el resultado del algoritmo de Secantes de forma ordenada
+
+    Ejemplo:
+    -----------------
+        >> from tabulate import tabulate
+
+        >> import math
+
+        >> f = lambda x : x*math.e**x-2
+
+        >> x0 = 1
+
+        >> x1 = 0
+
+        >> tol = 0.0005
+
+        >> r = secantes(f, x0, x1, tol)
+
+        >> dataframe = convertir_resultados_secantes(r[0])
+
+        >> print(tabulate(dataframe, headers="keys", tablefmt="fancy_grid"))
+
+    :param lista_resultados_secantes: Lista de iteraciones que modela la clase ResultadoSecantes
     """
     lista = []
     for r in lista_resultados_secantes:
