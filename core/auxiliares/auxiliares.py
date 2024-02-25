@@ -1,5 +1,5 @@
 """
-Métodos Auxiliares
+Métodos Auxiliares.
 Módulo que provee de métodos auxiliares y utilidades necesarios en otros módulos
 """
 import math

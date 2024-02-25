@@ -1,6 +1,7 @@
 """
-Capítulo 2. Resolución de ecuaciones algebraicas. Newton-Raphson
-Módulo que provee de los métodos para el algoritmo de Newton-Raphson
+Capítulo 2. Resolución de ecuaciones algebraicas. Newton-Raphson.
+Módulo que provee de los métodos para el algoritmo de Newton-Raphson para la resolución
+de ecuaciones algebraicas
 """
 
 import pandas as pd

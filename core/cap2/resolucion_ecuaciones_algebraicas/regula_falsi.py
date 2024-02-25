@@ -1,6 +1,7 @@
 """
-Capítulo 2. Resolución de ecuaciones algebraicas. Regula-Falsi
-Módulo que provee de los métodos para el algoritmo de Regula-Falsi
+Capítulo 2. Resolución de ecuaciones algebraicas. Regula-Falsi.
+Módulo que provee de los métodos para el algoritmo de Regula-Falsi para la resolución
+de ecuaciones algebraicas
 """
 
 import pandas as pd

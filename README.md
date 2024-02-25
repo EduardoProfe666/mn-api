@@ -52,7 +52,10 @@ funcionalidades de la api:
     - Conversión de matrices AX=B -> X=MX+C
     - Matriz con diagonal predominante
     - Factor de convergencia
-- [ ] _**Capítulo 4: Aproximación de Funciones**_
+- [x] _**Capítulo 4: Aproximación de Funciones**_
+  - [x] **Métodos**
+    - Método de Lagrange
+    - Método de Newton o Diferencias Divididas
 - [ ] _**Capítulo 5: Integración Numérica**_
 - [ ] _**Capítulo 6: Optimización Numérica**_
 - [ ] _**Capítulo 7: Ecuaciones Diferenciales Ordinarias**_
@@ -62,7 +65,7 @@ funcionalidades de la api:
 > [!IMPORTANT]
 > La documentación se encuentra en desarrollo. Pronto estará disponible
 
-Para poder importar el paquete ejecute en cualquier consola:
+Para poder importar el paquete, ejecute en cualquier consola:
 
 ```shell
 pip install mn-api

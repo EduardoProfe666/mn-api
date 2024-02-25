@@ -1,6 +1,7 @@
 """
-Capítulo 2. Resolución de ecuaciones algebraicas. Bisección
-Módulo que provee de los métodos para el algoritmo de bisección
+Capítulo 2. Resolución de ecuaciones algebraicas. Bisección.
+Módulo que provee de los métodos para el algoritmo de bisección para la resolución
+de ecuaciones algebraicas
 """
 
 import pandas as pd

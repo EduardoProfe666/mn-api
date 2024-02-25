@@ -1,6 +1,7 @@
 """
-Capítulo 2. Resolución de ecuaciones algebraicas. Secantes
-Módulo que provee de los métodos para el algoritmo de Secantes
+Capítulo 2. Resolución de ecuaciones algebraicas. Secantes.
+Módulo que provee de los métodos para el algoritmo de Secantes para la resolución
+de ecuaciones algebraicas
 """
 
 import pandas as pd
